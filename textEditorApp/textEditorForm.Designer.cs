@@ -54,7 +54,8 @@ namespace textEditorApp
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.boldToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.italicToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.underlineToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.resetToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -66,6 +67,8 @@ namespace textEditorApp
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.userNameLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -100,7 +103,7 @@ namespace textEditorApp
             // 
             // newToolStripMenuItem
             // 
-            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
+            this.newToolStripMenuItem.Image = global::textEditorApp.Properties.Resources._new;
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -110,7 +113,7 @@ namespace textEditorApp
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
+            this.openToolStripMenuItem.Image = global::textEditorApp.Properties.Resources.open;
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
@@ -125,7 +128,7 @@ namespace textEditorApp
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.Image = global::textEditorApp.Properties.Resources.if_save_173091;
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
@@ -156,7 +159,7 @@ namespace textEditorApp
             this.exitToolStripMenuItem.Image = global::textEditorApp.Properties.Resources.gnome_logout;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Text = "Log Out";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
@@ -171,7 +174,7 @@ namespace textEditorApp
             // 
             // cutToolStripMenuItem
             // 
-            this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
+            this.cutToolStripMenuItem.Image = global::textEditorApp.Properties.Resources.if_clipboard_cut_42190;
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
@@ -181,7 +184,7 @@ namespace textEditorApp
             // 
             // copyToolStripMenuItem
             // 
-            this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
+            this.copyToolStripMenuItem.Image = global::textEditorApp.Properties.Resources.if_icon_ios7_copy_outline_211732;
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
@@ -191,7 +194,7 @@ namespace textEditorApp
             // 
             // pasteToolStripMenuItem
             // 
-            this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
+            this.pasteToolStripMenuItem.Image = global::textEditorApp.Properties.Resources.if_paste_3671826;
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
@@ -224,7 +227,8 @@ namespace textEditorApp
             this.toolStripSeparator3,
             this.boldToolStripButton,
             this.italicToolStripButton,
-            this.underlineToolStripButton,
+            this.toolStripButton1,
+            this.resetToolStripButton,
             this.toolStripSeparator4,
             this.helpToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
@@ -236,7 +240,7 @@ namespace textEditorApp
             // newToolStripButton
             // 
             this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
+            this.newToolStripButton.Image = global::textEditorApp.Properties.Resources.New__2_;
             this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripButton.Name = "newToolStripButton";
             this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -246,7 +250,7 @@ namespace textEditorApp
             // openToolStripButton
             // 
             this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
+            this.openToolStripButton.Image = global::textEditorApp.Properties.Resources.open;
             this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -256,7 +260,7 @@ namespace textEditorApp
             // saveToolStripButton
             // 
             this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.Image = global::textEditorApp.Properties.Resources.if_save_173091;
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -270,7 +274,7 @@ namespace textEditorApp
             this.saveAsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveAsToolStripButton.Name = "saveAsToolStripButton";
             this.saveAsToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.saveAsToolStripButton.Text = "&Print";
+            this.saveAsToolStripButton.Text = "Save As";
             this.saveAsToolStripButton.Click += new System.EventHandler(this.printToolStripButton_Click);
             // 
             // toolStripSeparator3
@@ -286,6 +290,7 @@ namespace textEditorApp
             this.boldToolStripButton.Name = "boldToolStripButton";
             this.boldToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.boldToolStripButton.Text = "C&ut";
+            this.boldToolStripButton.ToolTipText = "Bold";
             this.boldToolStripButton.Click += new System.EventHandler(this.boldToolStripButton_Click);
             // 
             // italicToolStripButton
@@ -296,17 +301,30 @@ namespace textEditorApp
             this.italicToolStripButton.Name = "italicToolStripButton";
             this.italicToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.italicToolStripButton.Text = "&Copy";
+            this.italicToolStripButton.ToolTipText = "Italic";
             this.italicToolStripButton.Click += new System.EventHandler(this.italicToolStripButton_Click);
             // 
-            // underlineToolStripButton
+            // toolStripButton1
             // 
-            this.underlineToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.underlineToolStripButton.Image = global::textEditorApp.Properties.Resources._105_underline;
-            this.underlineToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.underlineToolStripButton.Name = "underlineToolStripButton";
-            this.underlineToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.underlineToolStripButton.Text = "&Paste";
-            this.underlineToolStripButton.Click += new System.EventHandler(this.underlineToolStripButton_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::textEditorApp.Properties.Resources._105_underline;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "&Paste";
+            this.toolStripButton1.ToolTipText = "Under Line";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // resetToolStripButton
+            // 
+            this.resetToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.resetToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("resetToolStripButton.Image")));
+            this.resetToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.resetToolStripButton.Name = "resetToolStripButton";
+            this.resetToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.resetToolStripButton.Text = "Reset";
+            this.resetToolStripButton.ToolTipText = "Reset";
+            this.resetToolStripButton.Click += new System.EventHandler(this.underlineToolStripButton_Click);
             // 
             // toolStripSeparator4
             // 
@@ -340,7 +358,7 @@ namespace textEditorApp
             // cutToolStripButton1
             // 
             this.cutToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.cutToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripButton1.Image")));
+            this.cutToolStripButton1.Image = global::textEditorApp.Properties.Resources.if_clipboard_cut_42190;
             this.cutToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripButton1.Name = "cutToolStripButton1";
             this.cutToolStripButton1.Size = new System.Drawing.Size(21, 20);
@@ -350,7 +368,7 @@ namespace textEditorApp
             // copyToolStripButton1
             // 
             this.copyToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copyToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton1.Image")));
+            this.copyToolStripButton1.Image = global::textEditorApp.Properties.Resources.if_icon_ios7_copy_outline_211732;
             this.copyToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripButton1.Name = "copyToolStripButton1";
             this.copyToolStripButton1.Size = new System.Drawing.Size(21, 20);
@@ -360,7 +378,7 @@ namespace textEditorApp
             // pasteToolStripButton1
             // 
             this.pasteToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pasteToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripButton1.Image")));
+            this.pasteToolStripButton1.Image = global::textEditorApp.Properties.Resources.if_paste_3671826;
             this.pasteToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripButton1.Name = "pasteToolStripButton1";
             this.pasteToolStripButton1.Size = new System.Drawing.Size(21, 20);
@@ -374,6 +392,9 @@ namespace textEditorApp
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(27, 49);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(773, 401);
@@ -384,11 +405,11 @@ namespace textEditorApp
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "Text Files (*.rtf)|*.rtf";
+            this.openFileDialog1.Filter = "RichText Files (*.rtf)|*.rtf";
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "Text Files (*.rtf)|*.rtf";
+            this.saveFileDialog1.Filter = "RichText Files (*.rtf)|*.rtf";
             // 
             // fontComboBox
             // 
@@ -405,17 +426,38 @@ namespace textEditorApp
             "16",
             "17",
             "18"});
-            this.fontComboBox.Location = new System.Drawing.Point(215, 24);
+            this.fontComboBox.Location = new System.Drawing.Point(236, 24);
             this.fontComboBox.Name = "fontComboBox";
             this.fontComboBox.Size = new System.Drawing.Size(121, 23);
             this.fontComboBox.TabIndex = 5;
             this.fontComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(363, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "User Name: ";
+            // 
+            // userNameLabel
+            // 
+            this.userNameLabel.AutoSize = true;
+            this.userNameLabel.Location = new System.Drawing.Point(440, 27);
+            this.userNameLabel.Name = "userNameLabel";
+            this.userNameLabel.Size = new System.Drawing.Size(38, 15);
+            this.userNameLabel.TabIndex = 7;
+            this.userNameLabel.Text = "label2";
             // 
             // textEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.userNameLabel);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.fontComboBox);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.toolStrip2);
@@ -469,9 +511,12 @@ namespace textEditorApp
         private System.Windows.Forms.ToolStripButton pasteToolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ToolStripButton underlineToolStripButton;
+        private System.Windows.Forms.ToolStripButton resetToolStripButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ComboBox fontComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label userNameLabel;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

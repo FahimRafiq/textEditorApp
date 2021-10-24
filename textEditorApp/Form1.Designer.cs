@@ -115,6 +115,7 @@ namespace textEditorApp
             // 
             this.passwordBox.Location = new System.Drawing.Point(170, 133);
             this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(196, 23);
             this.passwordBox.TabIndex = 7;
             this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);

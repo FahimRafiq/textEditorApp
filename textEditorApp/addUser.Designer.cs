@@ -159,6 +159,7 @@ namespace textEditorApp
             // 
             this.newPasswordBox.Location = new System.Drawing.Point(215, 131);
             this.newPasswordBox.Name = "newPasswordBox";
+            this.newPasswordBox.PasswordChar = '*';
             this.newPasswordBox.Size = new System.Drawing.Size(208, 23);
             this.newPasswordBox.TabIndex = 6;
             // 
@@ -166,6 +167,7 @@ namespace textEditorApp
             // 
             this.newRePasswordBox.Location = new System.Drawing.Point(215, 168);
             this.newRePasswordBox.Name = "newRePasswordBox";
+            this.newRePasswordBox.PasswordChar = '*';
             this.newRePasswordBox.Size = new System.Drawing.Size(208, 23);
             this.newRePasswordBox.TabIndex = 7;
             // 
