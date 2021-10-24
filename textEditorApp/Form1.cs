@@ -43,6 +43,9 @@ namespace textEditorApp
             if (validCredential)
             {
                 MessageBox.Show("Valid Credentials.");
+                this.Hide();
+                textEditorForm textEditorWindow = new textEditorForm();
+                textEditorWindow.Show();
             }
             else
             {
@@ -67,30 +70,63 @@ namespace textEditorApp
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void trialDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trialTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class UserInfo
     {
         
-        string userName;
-        string password;
-        string userType;
+        static string userName;
+        static string password;
+        static string userType;
 
         List<string> users;
-        bool validCred = false; 
+        bool validCred = false;
 
+        public UserInfo()
+        {
+        }
         public UserInfo(string enteredUserName,string enteredPassword )
         {
-            this.userName = enteredUserName;
-            this.password = enteredPassword;
+            userName = enteredUserName;
+            password = enteredPassword;
             
         }
+
+        public UserInfo(string newUserName, string newPassword, string newRePassword, string newFirstName, string newLastName, string newDatePicker,string newUserType)
+        {
+            ReadFromText();
+            if(validateDuplicateUserName(newUserName))
+            {
+                if(checkPasswordMatch(newPassword, newRePassword))
+                {
+                    addNewUsertoLoginFile(newUserName,newPassword,newFirstName,newLastName,newDatePicker,newUserType);
+                    MessageBox.Show("Successfully created new account!");
+                    Application.Restart();
+                    Environment.Exit(0);
+                }
+            }
+        }
+
         //Read all users from the Login Text
         public void ReadFromText()
         {
             try
             {
-                Console.WriteLine("Hi1");
+               
                 StreamReader userFile = new StreamReader("login.txt");
                 users = new List<string>();
                 string line = userFile.ReadLine();
@@ -134,10 +170,62 @@ namespace textEditorApp
             return validCred;
         }
 
+         public bool validateDuplicateUserName(string newUserName)
+        {
+
+            List<string>.Enumerator userList = users.GetEnumerator();
+
+            while (userList.MoveNext())
+            {
+                string user = userList.Current;
+                string[] userInfo = user.Split(',');
+
+                if (userInfo[0] == newUserName)
+                {
+                    MessageBox.Show("User name already exists. Please enter new user name.");
+                    return false;
+                                 
+                }
+            }
+
+            return true;
+
+        } 
+
+        public bool checkPasswordMatch(string pass, string rePass)
+        {
+            if(pass != rePass)
+            {
+                MessageBox.Show("Password Doesn't match!");
+                return false;
+            }
+
+            return true;
+        }
+
+        public void addNewUsertoLoginFile(string newUserName, string newPassword, string newFirstName, string newLastName, string newDatePicker, string newUserType)
+        {
+            string[] newUserInfoArray = { newUserName, newPassword, newUserType, newFirstName, newLastName, newDatePicker };
+            string newUserInfo = string.Join(",", newUserInfoArray);
+            try
+            {
+                using (StreamWriter sw = File.AppendText("login.txt"))
+                {
+                    //sw.WriteLine();
+                    sw.WriteLine(newUserInfo);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!");
+            }
+ 
+        }
+
         //Setter and getters for name, password and user-type
-        public string UserName{ get { return this.userName; }}
-        public string Password{ get { return this.password; }}
-        public string UserType{ get { return this.userType; }}
+        public static string UserName{ get { return userName; }}
+        public static string Password{ get { return password; }}
+        public static string UserType{ get { return userType; }}
 
     }
 }

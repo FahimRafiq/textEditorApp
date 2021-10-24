@@ -37,8 +37,8 @@ namespace textEditorApp
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.newUserSubmitBtn = new System.Windows.Forms.Button();
+            this.newUserCancelBtn = new System.Windows.Forms.Button();
             this.newUserNameBox = new System.Windows.Forms.TextBox();
             this.newPasswordBox = new System.Windows.Forms.TextBox();
             this.newRePasswordBox = new System.Windows.Forms.TextBox();
@@ -128,23 +128,25 @@ namespace textEditorApp
             this.label8.TabIndex = 2;
             this.label8.Text = "User-Type: ";
             // 
-            // button1
+            // newUserSubmitBtn
             // 
-            this.button1.Location = new System.Drawing.Point(108, 360);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 34);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.newUserSubmitBtn.Location = new System.Drawing.Point(108, 360);
+            this.newUserSubmitBtn.Name = "newUserSubmitBtn";
+            this.newUserSubmitBtn.Size = new System.Drawing.Size(83, 34);
+            this.newUserSubmitBtn.TabIndex = 3;
+            this.newUserSubmitBtn.Text = "Submit";
+            this.newUserSubmitBtn.UseVisualStyleBackColor = true;
+            this.newUserSubmitBtn.Click += new System.EventHandler(this.buttonewUserSubmitBtnn1_Click);
             // 
-            // button2
+            // newUserCancelBtn
             // 
-            this.button2.Location = new System.Drawing.Point(243, 360);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 34);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.newUserCancelBtn.Location = new System.Drawing.Point(243, 360);
+            this.newUserCancelBtn.Name = "newUserCancelBtn";
+            this.newUserCancelBtn.Size = new System.Drawing.Size(83, 34);
+            this.newUserCancelBtn.TabIndex = 4;
+            this.newUserCancelBtn.Text = "Cancel";
+            this.newUserCancelBtn.UseVisualStyleBackColor = true;
+            this.newUserCancelBtn.Click += new System.EventHandler(this.newUserCancelBtn_Click);
             // 
             // newUserNameBox
             // 
@@ -211,8 +213,8 @@ namespace textEditorApp
             this.Controls.Add(this.newRePasswordBox);
             this.Controls.Add(this.newPasswordBox);
             this.Controls.Add(this.newUserNameBox);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.newUserCancelBtn);
+            this.Controls.Add(this.newUserSubmitBtn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -223,6 +225,7 @@ namespace textEditorApp
             this.Controls.Add(this.label1);
             this.Name = "addUser";
             this.Text = "New User Information";
+            this.Load += new System.EventHandler(this.addUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,14 +241,14 @@ namespace textEditorApp
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox newUserNameBox;
+        private System.Windows.Forms.Button newUserSubmitBtn;
+        private System.Windows.Forms.Button newUserCancelBtn;
         private System.Windows.Forms.TextBox newPasswordBox;
         private System.Windows.Forms.TextBox newRePasswordBox;
         private System.Windows.Forms.TextBox newFirstNameBox;
         private System.Windows.Forms.TextBox newLastNameBox;
         private System.Windows.Forms.DateTimePicker newDatePicker;
         private System.Windows.Forms.ComboBox newUserTypeComboBox;
+        private System.Windows.Forms.TextBox newUserNameBox;
     }
 }
